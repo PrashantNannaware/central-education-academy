@@ -3,10 +3,23 @@ import { GraduationCap, BookOpen, Users } from "lucide-react";
 
 const Hero = () => {
   return (
-    <header className="container-padding py-12">
+    <header className="container-padding py-12 relative">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 -z-10 overflow-hidden"
+        style={{
+          backgroundImage: 'url("https://images.unsplash.com/photo-1513836279014-a89f7a76ae86")',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black/50" />
+      </div>
+
       <div className="max-w-4xl mx-auto text-center relative z-10 pt-40 pb-32">
         <motion.h1 
-          className="heading-xl mb-6"
+          className="heading-xl mb-6 text-white"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -14,7 +27,7 @@ const Hero = () => {
           Expert Guidance for Grades 9-12
         </motion.h1>
         <motion.p 
-          className="text-xl text-neutral-600 mb-8"
+          className="text-xl text-neutral-200 mb-8"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
@@ -56,7 +69,7 @@ const Hero = () => {
           <button className="button-primary flex items-center gap-2">
             Enroll Now
           </button>
-          <button className="px-6 py-3 border border-neutral-300 rounded-lg hover:bg-neutral-200/50 transition-colors">
+          <button className="px-6 py-3 border border-white/20 text-white rounded-lg hover:bg-white/10 transition-colors">
             Contact Us
           </button>
         </motion.div>
