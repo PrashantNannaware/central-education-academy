@@ -17,14 +17,18 @@ const Hero = () => {
       </div>
 
       <div className="max-w-4xl mx-auto text-center relative z-10 pt-40 pb-32">
-        <motion.h1 
-          className="heading-xl mb-6 text-primary-foreground"
+        <motion.div 
+          className="flex items-center justify-center gap-4 mb-6"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          Expert Guidance for Grades 9-12
-        </motion.h1>
+          <GraduationCap className="w-12 h-12 text-accent-purple" />
+          <h1 className="heading-xl text-primary-foreground">
+            Expert Guidance for Grades 9-12
+          </h1>
+        </motion.div>
+
         <motion.p 
           className="text-xl text-neutral-100 mb-8"
           initial={{ opacity: 0, y: 20 }}
@@ -40,19 +44,19 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
         >
-          <div className="flex flex-col items-center p-6 glass-panel rounded-xl bg-white/90">
+          <div className="flex flex-col items-center p-6 glass-panel rounded-xl">
             <GraduationCap className="w-12 h-12 text-accent-purple mb-4" />
             <h3 className="text-lg font-semibold mb-2">Expert Teachers</h3>
             <p className="text-neutral-600">Qualified and experienced educators</p>
           </div>
           
-          <div className="flex flex-col items-center p-6 glass-panel rounded-xl bg-white/90">
+          <div className="flex flex-col items-center p-6 glass-panel rounded-xl">
             <BookOpen className="w-12 h-12 text-accent-blue mb-4" />
             <h3 className="text-lg font-semibold mb-2">Comprehensive Syllabus</h3>
             <p className="text-neutral-600">Aligned with board requirements</p>
           </div>
           
-          <div className="flex flex-col items-center p-6 glass-panel rounded-xl bg-white/90">
+          <div className="flex flex-col items-center p-6 glass-panel rounded-xl">
             <Users className="w-12 h-12 text-accent-green mb-4" />
             <h3 className="text-lg font-semibold mb-2">Small Batch Sizes</h3>
             <p className="text-neutral-600">Personalized attention guaranteed</p>
@@ -65,9 +69,13 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <button className="button-primary bg-white text-primary hover:bg-neutral-100">
-            Enroll Now
-          </button>
+          <motion.button 
+            className="button-primary bg-accent-green text-white hover:bg-accent-green/90 transform transition-all duration-300 hover:scale-105"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Start Learning Today
+          </motion.button>
           <button className="px-6 py-3 border border-white text-white rounded-lg hover:bg-white/10 transition-colors">
             Contact Us
           </button>
