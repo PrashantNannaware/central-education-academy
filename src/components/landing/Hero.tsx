@@ -3,18 +3,32 @@ import { GraduationCap, BookOpen, Users } from "lucide-react";
 
 const Hero = () => {
   return (
-    <header className="container-padding py-12">
+    <header className="container-padding py-12 relative">
+      {/* Background Image with Overlay */}
+      <div 
+        className="absolute inset-0 -z-10"
+        style={{
+          backgroundImage: "url('https://images.unsplash.com/photo-1513836279014-a89f7a76ae86')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
+        }}
+      >
+        <div className="absolute inset-0 bg-black/50" /> {/* Dark overlay for better text contrast */}
+      </div>
+
       <div className="max-w-4xl mx-auto text-center relative z-10 pt-40 pb-32">
-        <motion.h1 
-          className="heading-xl mb-6"
+        <motion.div 
+          className="flex items-center justify-center gap-4 mb-6"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          Expert Guidance for Grades 9-12
-        </motion.h1>
+          <GraduationCap className="w-12 h-12 text-accent-purple" />
+          <h1 className="heading-xl text-neutral-100">Expert Guidance for Grades 9-12</h1>
+        </motion.div>
+
         <motion.p 
-          className="text-xl text-neutral-600 mb-8"
+          className="text-xl text-neutral-200 mb-8"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
@@ -53,10 +67,14 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <button className="button-primary flex items-center gap-2">
+          <motion.button 
+            className="button-primary flex items-center gap-2 bg-accent-green hover:bg-accent-green/90 transform transition-all duration-300 hover:scale-105"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
             Enroll Now
-          </button>
-          <button className="px-6 py-3 border border-neutral-300 rounded-lg hover:bg-neutral-200/50 transition-colors">
+          </motion.button>
+          <button className="px-6 py-3 border border-neutral-300 rounded-lg bg-white/10 hover:bg-white/20 text-neutral-100 transition-colors">
             Contact Us
           </button>
         </motion.div>
