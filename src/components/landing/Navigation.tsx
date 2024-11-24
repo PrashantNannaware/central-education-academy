@@ -3,15 +3,30 @@ import { Menu, GraduationCap, ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
 import { useToast } from "@/components/ui/use-toast";
 import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { toast } = useToast();
+  const [enrollmentData, setEnrollmentData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    course: "",
+  });
 
   const handleNavigation = (section: string) => {
     const element = document.getElementById(section);
@@ -37,13 +52,47 @@ const Navigation = () => {
     });
   };
 
-  const handleEnrollNow = () => {
+  const handleEnrollSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Here you would typically send this data to your backend
     toast({
-      title: "Enrollment Process",
-      description: "Please contact our admissions team to start your enrollment process.",
-      duration: 3000,
+      title: "Enrollment Request Submitted",
+      description: "We'll contact you shortly to complete your enrollment.",
+      duration: 5000,
     });
   };
+
+  const EnrollmentForm = () => (
+    <form onSubmit={handleEnrollSubmit} className="space-y-4">
+      <Input
+        placeholder="Full Name"
+        value={enrollmentData.name}
+        onChange={(e) => setEnrollmentData({ ...enrollmentData, name: e.target.value })}
+        required
+      />
+      <Input
+        type="email"
+        placeholder="Email"
+        value={enrollmentData.email}
+        onChange={(e) => setEnrollmentData({ ...enrollmentData, email: e.target.value })}
+        required
+      />
+      <Input
+        type="tel"
+        placeholder="Phone Number"
+        value={enrollmentData.phone}
+        onChange={(e) => setEnrollmentData({ ...enrollmentData, phone: e.target.value })}
+        required
+      />
+      <Input
+        placeholder="Preferred Course"
+        value={enrollmentData.course}
+        onChange={(e) => setEnrollmentData({ ...enrollmentData, course: e.target.value })}
+        required
+      />
+      <Button type="submit" className="w-full">Submit Enrollment</Button>
+    </form>
+  );
 
   return (
     <nav className="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-6xl z-[100]">
@@ -107,12 +156,19 @@ const Navigation = () => {
           >
             Student Login
           </button>
-          <button 
-            onClick={handleEnrollNow}
-            className="button-secondary"
-          >
-            Enroll Now
-          </button>
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button variant="default" className="button-secondary">
+                Enroll Now
+              </Button>
+            </DialogTrigger>
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle>Enroll in a Course</DialogTitle>
+              </DialogHeader>
+              <EnrollmentForm />
+            </DialogContent>
+          </Dialog>
         </div>
 
         {/* Mobile Menu Button */}
@@ -183,12 +239,19 @@ const Navigation = () => {
             >
               Student Login
             </button>
-            <button 
-              onClick={handleEnrollNow}
-              className="button-secondary w-full"
-            >
-              Enroll Now
-            </button>
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button variant="default" className="w-full">
+                  Enroll Now
+                </Button>
+              </DialogTrigger>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>Enroll in a Course</DialogTitle>
+                </DialogHeader>
+                <EnrollmentForm />
+              </DialogContent>
+            </Dialog>
           </div>
         </motion.div>
       )}
