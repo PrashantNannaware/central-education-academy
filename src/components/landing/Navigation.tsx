@@ -46,7 +46,7 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-6xl z-50">
+    <nav className="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-6xl z-[100]">
       <div className="glass-panel rounded-full px-6 py-4 flex items-center justify-between shadow-lg backdrop-blur-md">
         <div className="flex items-center gap-2">
           <GraduationCap className="w-8 h-8 text-primary" />
@@ -59,7 +59,7 @@ const Navigation = () => {
             <DropdownMenuTrigger className="flex items-center gap-1 text-neutral-600 hover:text-primary transition-colors font-medium">
               Courses <ChevronDown className="h-4 w-4" />
             </DropdownMenuTrigger>
-            <DropdownMenuContent>
+            <DropdownMenuContent className="z-[101]">
               <DropdownMenuItem onClick={() => handleCourseSelect("Mathematics")}>
                 Mathematics
               </DropdownMenuItem>
@@ -137,7 +137,7 @@ const Navigation = () => {
               <DropdownMenuTrigger className="flex items-center gap-1 text-neutral-600 hover:text-primary transition-colors font-medium px-4 py-2 hover:bg-neutral-200/50 rounded-lg text-left">
                 Courses <ChevronDown className="h-4 w-4" />
               </DropdownMenuTrigger>
-              <DropdownMenuContent>
+              <DropdownMenuContent className="z-[101]">
                 <DropdownMenuItem onClick={() => handleCourseSelect("Mathematics")}>
                   Mathematics
                 </DropdownMenuItem>
