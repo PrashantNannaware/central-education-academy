@@ -1,7 +1,13 @@
 import { useState } from "react";
-import { Menu, GraduationCap } from "lucide-react";
+import { Menu, GraduationCap, ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
 import { useToast } from "@/components/ui/use-toast";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,6 +19,14 @@ const Navigation = () => {
       element.scrollIntoView({ behavior: 'smooth' });
       setIsMenuOpen(false);
     }
+  };
+
+  const handleCourseSelect = (course: string) => {
+    toast({
+      title: `${course} Course`,
+      description: `You selected the ${course} course. Contact us for more information.`,
+      duration: 3000,
+    });
   };
 
   const handleStudentLogin = () => {
@@ -41,12 +55,31 @@ const Navigation = () => {
         
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
-          <button 
-            onClick={() => handleNavigation('courses')} 
-            className="text-neutral-600 hover:text-primary transition-colors font-medium"
-          >
-            Courses
-          </button>
+          <DropdownMenu>
+            <DropdownMenuTrigger className="flex items-center gap-1 text-neutral-600 hover:text-primary transition-colors font-medium">
+              Courses <ChevronDown className="h-4 w-4" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuItem onClick={() => handleCourseSelect("Mathematics")}>
+                Mathematics
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => handleCourseSelect("English")}>
+                English Language & Literature
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => handleCourseSelect("Science")}>
+                Science (Physics, Chemistry, Biology)
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => handleCourseSelect("Computer Science")}>
+                Computer Science
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => handleCourseSelect("History")}>
+                History & Social Studies
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => handleCourseSelect("Languages")}>
+                Foreign Languages
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
           <button 
             onClick={() => handleNavigation('schedule')} 
             className="text-neutral-600 hover:text-primary transition-colors font-medium"
@@ -100,12 +133,31 @@ const Navigation = () => {
           transition={{ duration: 0.2 }}
         >
           <div className="flex flex-col gap-4">
-            <button 
-              onClick={() => handleNavigation('courses')}
-              className="text-neutral-600 hover:text-primary transition-colors font-medium px-4 py-2 hover:bg-neutral-200/50 rounded-lg text-left"
-            >
-              Courses
-            </button>
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center gap-1 text-neutral-600 hover:text-primary transition-colors font-medium px-4 py-2 hover:bg-neutral-200/50 rounded-lg text-left">
+                Courses <ChevronDown className="h-4 w-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <DropdownMenuItem onClick={() => handleCourseSelect("Mathematics")}>
+                  Mathematics
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => handleCourseSelect("English")}>
+                  English Language & Literature
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => handleCourseSelect("Science")}>
+                  Science (Physics, Chemistry, Biology)
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => handleCourseSelect("Computer Science")}>
+                  Computer Science
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => handleCourseSelect("History")}>
+                  History & Social Studies
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => handleCourseSelect("Languages")}>
+                  Foreign Languages
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
             <button 
               onClick={() => handleNavigation('schedule')}
               className="text-neutral-600 hover:text-primary transition-colors font-medium px-4 py-2 hover:bg-neutral-200/50 rounded-lg text-left"
