@@ -23,17 +23,23 @@ const Hero = () => {
           className="max-w-4xl mx-auto text-center"
         >
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-            With Ardor and Devotion
+            Excel in Your Academic Journey
           </h1>
           <p className="text-xl md:text-2xl text-neutral-200 mb-8">
-            Aligning who you are with what you do is the heart of the educational experience.
+            Expert tutoring in Mathematics, Science, and English. Join our proven pathway to academic success.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button 
               className="bg-accent-purple hover:bg-accent-purple/90 text-white px-8 py-6 text-lg"
               variant="default"
             >
-              Learn About Visiting
+              Start Learning Today
+            </Button>
+            <Button 
+              className="bg-white/10 hover:bg-white/20 text-white px-8 py-6 text-lg backdrop-blur-sm"
+              variant="default"
+            >
+              View Course Schedule
             </Button>
           </div>
         </motion.div>
