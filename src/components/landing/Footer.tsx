@@ -1,4 +1,5 @@
-import { GraduationCap } from "lucide-react";
+import { GraduationCap, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import SubscriptionForm from "./SubscriptionForm";
 
 const Footer = () => {
   return (
@@ -10,9 +11,10 @@ const Footer = () => {
               <GraduationCap className="w-8 h-8 text-primary" />
               <span className="text-xl font-semibold">EduExcel</span>
             </div>
-            <p className="text-neutral-600 text-sm">
+            <p className="text-neutral-600 text-sm mb-6">
               Empowering students with quality education since 2010
             </p>
+            <SubscriptionForm />
           </div>
           
           <div>
@@ -22,16 +24,31 @@ const Footer = () => {
               <li><a href="#schedule" className="text-neutral-600 hover:text-primary transition-colors">Class Schedule</a></li>
               <li><a href="#testimonials" className="text-neutral-600 hover:text-primary transition-colors">Success Stories</a></li>
               <li><a href="#contact" className="text-neutral-600 hover:text-primary transition-colors">Contact Us</a></li>
+              <li><a href="#faq" className="text-neutral-600 hover:text-primary transition-colors">FAQs</a></li>
             </ul>
           </div>
           
           <div>
-            <h3 className="font-semibold mb-4">Contact Info</h3>
-            <ul className="space-y-3 text-neutral-600">
-              <li>123 Education Street</li>
-              <li>contact@eduexcel.com</li>
-              <li>+1 234 567 890</li>
-            </ul>
+            <h3 className="font-semibold mb-4">Connect With Us</h3>
+            <div className="flex gap-4 mb-6">
+              <a href="#" className="text-neutral-600 hover:text-primary transition-colors">
+                <Facebook className="w-5 h-5" />
+              </a>
+              <a href="#" className="text-neutral-600 hover:text-primary transition-colors">
+                <Twitter className="w-5 h-5" />
+              </a>
+              <a href="#" className="text-neutral-600 hover:text-primary transition-colors">
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a href="#" className="text-neutral-600 hover:text-primary transition-colors">
+                <Linkedin className="w-5 h-5" />
+              </a>
+            </div>
+            <div className="text-neutral-600">
+              <p>123 Education Street</p>
+              <p>contact@eduexcel.com</p>
+              <p>+1 234 567 890</p>
+            </div>
           </div>
         </div>
         
