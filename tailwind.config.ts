@@ -25,12 +25,12 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#141413",
-          foreground: "#FAFAF8",
+          DEFAULT: "#8B1A1A",
+          foreground: "#FFFFFF",
         },
         secondary: {
-          DEFAULT: "#8989DE",
-          foreground: "#141413",
+          DEFAULT: "#003D4C",
+          foreground: "#FFFFFF",
         },
         neutral: {
           100: "#FAFAF8",
@@ -43,9 +43,9 @@ export default {
           800: "#3A3935",
         },
         accent: {
-          purple: "#8989DE",
-          blue: "#61AAF2",
-          green: "#7EBF8E",
+          purple: "#8B1A1A",
+          blue: "#2A9FD6",
+          green: "#9B9B27",
         },
       },
       fontFamily: {
