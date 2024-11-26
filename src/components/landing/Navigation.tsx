@@ -1,4 +1,4 @@
-import { GraduationCap, Search, LogIn } from "lucide-react";
+import { GraduationCap, Search, LogIn, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -21,10 +21,28 @@ const Navigation = () => {
     });
   };
 
+  const handleMenuClick = () => {
+    toast({
+      title: "Menu",
+      description: "Menu functionality coming soon",
+      duration: 3000,
+    });
+  };
+
   return (
     <nav className="z-50">
       <div className="container mx-auto px-4 mt-4">
         <div className="flex items-center justify-between h-20 bg-white/80 backdrop-blur-sm rounded-full shadow-lg px-8">
+          {/* Menu Button */}
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={handleMenuClick}
+            className="text-neutral-600 hover:text-primary hover:bg-neutral-100"
+          >
+            <Menu className="w-5 h-5" />
+          </Button>
+
           {/* Brand and Logo */}
           <div className="flex items-center gap-3">
             <GraduationCap className="w-8 h-8 text-primary" />
