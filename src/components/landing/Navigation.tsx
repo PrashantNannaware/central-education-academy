@@ -37,10 +37,10 @@ const Navigation = () => {
             <DropdownMenuTrigger asChild>
               <Button 
                 variant="ghost" 
-                size="icon"
-                className="text-neutral-600 hover:text-primary hover:bg-neutral-100"
+                className="text-neutral-600 hover:text-primary hover:bg-neutral-100 flex items-center gap-2 px-4"
               >
                 <Menu className="w-5 h-5" />
+                <span className="text-sm font-medium">Menu</span>
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-56">
