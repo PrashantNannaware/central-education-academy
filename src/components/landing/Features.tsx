@@ -6,12 +6,14 @@ const Features = () => {
     {
       title: "Comprehensive Academic Programs",
       description: "Experience world-class education with our diverse range of academic programs designed for student success.",
-      points: ["Expert Faculty Members", "Modern Learning Facilities", "Research Opportunities"]
+      points: ["Expert Faculty Members", "Modern Learning Facilities", "Research Opportunities"],
+      image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625"
     },
     {
       title: "Student Support Services",
       description: "We provide comprehensive support services to ensure every student reaches their full potential.",
-      points: ["Academic Counseling", "Career Development", "Student Wellness Programs"]
+      points: ["Academic Counseling", "Career Development", "Student Wellness Programs"],
+      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c"
     }
   ];
 
@@ -58,11 +60,11 @@ const Features = () => {
               </div>
             </div>
             <div className="flex-1">
-              <Card className="glass-panel p-8 rounded-2xl hover:shadow-lg transition-all duration-300 border-primary/10">
+              <Card className="glass-panel p-8 rounded-2xl hover:shadow-lg transition-all duration-300 border-primary/10 overflow-hidden">
                 <img 
-                  src="/placeholder.svg" 
+                  src={feature.image}
                   alt={feature.title}
-                  className="w-full h-auto rounded-lg"
+                  className="w-full h-[300px] object-cover rounded-lg transform hover:scale-105 transition-transform duration-300"
                 />
               </Card>
             </div>
