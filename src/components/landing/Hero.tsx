@@ -7,12 +7,14 @@ const Hero = () => {
     <div className="relative min-h-screen">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 z-0 bg-cover bg-center"
+        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1487958449943-2429e8be8625')",
+          backgroundImage: "url('https://images.unsplash.com/photo-1439337153520-7082a56a81f4')",
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50" />
+        {/* Enhanced gradient overlay for better text readability */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/70 to-primary/50 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30" />
       </div>
 
       <div className="relative z-10 container mx-auto px-4 pt-40 pb-32">
@@ -50,25 +52,25 @@ const Hero = () => {
             icon={<GraduationCap className="w-12 h-12" />}
             title="Future Students"
             description="Our unique personality rests on the bedrock values of academic excellence, inclusivity, and social responsibility."
-            bgColor="bg-[#003D4C]"
+            bgColor="bg-[#003D4C]/90"
           />
           <FeatureBlock
             icon={<BookOpen className="w-12 h-12" />}
             title="Academic Programs"
             description="Education fosters intellectual inquiry and reflection, personal growth, and a commitment to the world beyond oneself."
-            bgColor="bg-[#9B9B27]"
+            bgColor="bg-[#9B9B27]/90"
           />
           <FeatureBlock
             icon={<Users className="w-12 h-12" />}
             title="Presidential Search"
             description="Recruiting, selecting, and appointing the ninth College president."
-            bgColor="bg-[#2A9FD6]"
+            bgColor="bg-[#2A9FD6]/90"
           />
           <FeatureBlock
             icon={<MapPin className="w-12 h-12" />}
             title="Virtual Campus Tours"
             description="Take a virtual tour, learn about admission and financial aid, and speak with current students."
-            bgColor="bg-[#8B1A1A]"
+            bgColor="bg-[#8B1A1A]/90"
           />
         </div>
       </div>
@@ -86,7 +88,7 @@ const FeatureBlock = ({ icon, title, description, bgColor }: {
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.6, delay: 0.2 }}
-    className={`${bgColor} p-8 text-white hover:scale-105 transition-transform duration-300`}
+    className={`${bgColor} backdrop-blur-sm p-8 text-white hover:scale-105 transition-transform duration-300 rounded-xl border border-white/10`}
   >
     <div className="mb-4">{icon}</div>
     <h3 className="text-xl font-semibold mb-3">{title}</h3>
