@@ -36,29 +36,33 @@ const Navigation = () => {
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button 
-                variant="default"
-                className="bg-primary text-white hover:bg-primary/90 flex items-center gap-2 px-6 py-2 rounded-full shadow-md transition-all duration-200"
+                variant="ghost"
+                className="bg-white/50 hover:bg-white/80 text-primary hover:text-primary/90 
+                         flex items-center gap-2 px-6 py-2 rounded-full 
+                         shadow-sm hover:shadow-md transition-all duration-300
+                         border border-neutral-200/50 hover:border-neutral-300/50
+                         transform hover:scale-105"
               >
                 <Menu className="w-5 h-5" />
                 <span className="text-sm font-medium">Menu</span>
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-56">
-              <DropdownMenuItem className="flex items-center gap-2">
-                <BookOpen className="w-4 h-4" />
+            <DropdownMenuContent className="w-56 mt-2 p-2 bg-white/95 backdrop-blur-sm border border-neutral-200/50 rounded-xl shadow-xl">
+              <DropdownMenuItem className="flex items-center gap-2 px-4 py-2.5 rounded-lg hover:bg-neutral-100/80 transition-colors">
+                <BookOpen className="w-4 h-4 text-primary" />
                 <span>Courses</span>
               </DropdownMenuItem>
-              <DropdownMenuItem className="flex items-center gap-2">
-                <Users className="w-4 h-4" />
+              <DropdownMenuItem className="flex items-center gap-2 px-4 py-2.5 rounded-lg hover:bg-neutral-100/80 transition-colors">
+                <Users className="w-4 h-4 text-primary" />
                 <span>Community</span>
               </DropdownMenuItem>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem className="flex items-center gap-2">
-                <BookMarked className="w-4 h-4" />
+              <DropdownMenuSeparator className="my-2 border-neutral-200/70" />
+              <DropdownMenuItem className="flex items-center gap-2 px-4 py-2.5 rounded-lg hover:bg-neutral-100/80 transition-colors">
+                <BookMarked className="w-4 h-4 text-primary" />
                 <span>Resources</span>
               </DropdownMenuItem>
-              <DropdownMenuItem className="flex items-center gap-2">
-                <School className="w-4 h-4" />
+              <DropdownMenuItem className="flex items-center gap-2 px-4 py-2.5 rounded-lg hover:bg-neutral-100/80 transition-colors">
+                <School className="w-4 h-4 text-primary" />
                 <span>Campus</span>
               </DropdownMenuItem>
             </DropdownMenuContent>
