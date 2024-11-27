@@ -4,27 +4,27 @@ import { Card } from "@/components/ui/card";
 const Features = () => {
   const features = [
     {
-      title: "Intelligent Task Management",
-      description: "Streamline your tasks and collaborate seamlessly with our cutting-edge SaaS startup platform.",
-      points: ["Smart Task Assignment", "Real-time Collaboration", "Data Security & Privacy"]
+      title: "Comprehensive Academic Programs",
+      description: "Experience world-class education with our diverse range of academic programs designed for student success.",
+      points: ["Expert Faculty Members", "Modern Learning Facilities", "Research Opportunities"]
     },
     {
-      title: "Advanced Analytics",
-      description: "Harness the power of AI-driven analytics to optimize your campaigns and understand your audience better.",
-      points: ["Smart Audience Segmentation", "Predictive Performance", "Real-time Visualization"]
+      title: "Student Support Services",
+      description: "We provide comprehensive support services to ensure every student reaches their full potential.",
+      points: ["Academic Counseling", "Career Development", "Student Wellness Programs"]
     }
   ];
 
   return (
-    <section className="py-24 bg-neutral-100">
+    <section className="py-20 bg-gradient-to-b from-neutral-100 to-white">
       <div className="container-padding">
         <div className="text-center mb-16 animate-fade-up">
-          <span className="bg-accent-purple/10 text-accent-purple px-4 py-1.5 rounded-full text-sm font-medium">
-            FEATURES
+          <span className="bg-primary/10 text-primary px-4 py-1.5 rounded-full text-sm font-medium">
+            WHY CHOOSE US
           </span>
-          <h2 className="heading-lg mt-6">Supercharge Your Workflows</h2>
+          <h2 className="heading-lg mt-6 text-secondary">Excellence in Education</h2>
           <p className="text-neutral-600 mt-4 max-w-2xl mx-auto">
-            Unlock your team's true potential with our state-of-the-art SaaS platform.
+            Join a community dedicated to academic excellence and student success.
           </p>
         </div>
 
@@ -36,13 +36,13 @@ const Features = () => {
             } animate-fade-up`}
           >
             <div className="flex-1">
-              <h3 className="text-2xl font-bold mb-4 text-primary">{feature.title}</h3>
+              <h3 className="text-2xl font-bold mb-4 text-secondary">{feature.title}</h3>
               <p className="text-neutral-600 mb-6">{feature.description}</p>
               <ul className="space-y-4">
                 {feature.points.map((point) => (
                   <li key={point} className="flex items-center gap-3">
-                    <div className="w-5 h-5 rounded-full bg-accent-purple/10 flex items-center justify-center">
-                      <Check className="w-3 h-3 text-accent-purple" />
+                    <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center">
+                      <Check className="w-3 h-3 text-primary" />
                     </div>
                     <span className="text-neutral-700">{point}</span>
                   </li>
@@ -50,15 +50,15 @@ const Features = () => {
               </ul>
               <div className="mt-8 flex gap-4">
                 <button className="button-primary">
-                  Start 14-day trial
+                  Apply Now
                 </button>
-                <button className="px-6 py-3 text-neutral-600 hover:text-primary transition-colors">
-                  Contact Sales
+                <button className="px-6 py-3 text-secondary hover:text-primary transition-colors">
+                  Learn More
                 </button>
               </div>
             </div>
             <div className="flex-1">
-              <Card className="glass-panel p-6 rounded-2xl hover:shadow-lg transition-all duration-300">
+              <Card className="glass-panel p-8 rounded-2xl hover:shadow-lg transition-all duration-300 border-primary/10">
                 <img 
                   src="/placeholder.svg" 
                   alt={feature.title}
