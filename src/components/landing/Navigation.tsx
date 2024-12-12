@@ -1,12 +1,12 @@
 import { GraduationCap, Search, LogIn, Menu, BookOpen, Users, BookMarked, School } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+  Drawer,
+  DrawerContent,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -95,22 +95,24 @@ const Navigation = () => {
               Student Login
             </Button>
 
-            {/* Enroll Now Button */}
-            <Dialog>
-              <DialogTrigger asChild>
+            {/* Enroll Now Button with Drawer */}
+            <Drawer>
+              <DrawerTrigger asChild>
                 <Button 
                   className="bg-primary text-white hover:bg-primary/90 px-6"
                 >
                   Enroll Now
                 </Button>
-              </DialogTrigger>
-              <DialogContent>
-                <DialogHeader>
-                  <DialogTitle>Enroll in a Course</DialogTitle>
-                </DialogHeader>
-                <EnrollmentForm />
-              </DialogContent>
-            </Dialog>
+              </DrawerTrigger>
+              <DrawerContent className="h-[95vh] p-6">
+                <DrawerHeader>
+                  <DrawerTitle className="text-2xl font-bold">Enroll in a Course</DrawerTitle>
+                </DrawerHeader>
+                <div className="overflow-y-auto max-h-[calc(95vh-100px)]">
+                  <EnrollmentForm />
+                </div>
+              </DrawerContent>
+            </Drawer>
           </div>
         </div>
       </div>
