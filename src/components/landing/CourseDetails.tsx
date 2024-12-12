@@ -40,8 +40,6 @@ const CourseDetails = ({ stream, className = "", center, state }: CourseDetailsP
     }
   };
 
-  const courseInfo = getCourseInfo(stream);
-
   const handleConfirmAdmission = () => {
     toast({
       title: "Admission Process Initiated",
@@ -58,7 +56,7 @@ const CourseDetails = ({ stream, className = "", center, state }: CourseDetailsP
 
       <div className="space-y-4">
         <h4 className="text-xl font-semibold">Course Name</h4>
-        <p>{courseInfo.name}</p>
+        <p>{getCourseInfo(stream).name}</p>
       </div>
 
       <div className="space-y-4">
@@ -76,7 +74,7 @@ const CourseDetails = ({ stream, className = "", center, state }: CourseDetailsP
         <h4 className="text-xl font-semibold">Batch Details</h4>
         <ul className="space-y-2">
           <li><strong>Start Date:</strong> Next batch starts from 1st June 2024</li>
-          <li><strong>Duration:</strong> {courseInfo.duration}</li>
+          <li><strong>Duration:</strong> {getCourseInfo(stream).duration}</li>
           <li><strong>Mode of Learning:</strong> Hybrid (Online + Classroom)</li>
         </ul>
       </div>
@@ -93,7 +91,7 @@ const CourseDetails = ({ stream, className = "", center, state }: CourseDetailsP
       <div className="space-y-4">
         <h4 className="text-xl font-semibold">Fees and Payment Options</h4>
         <ul className="space-y-2">
-          <li><strong>Total Course Fee:</strong> {courseInfo.fee}</li>
+          <li><strong>Total Course Fee:</strong> {getCourseInfo(stream).fee}</li>
           <li><strong>Installments Available:</strong> Yes</li>
           <li><strong>Scholarships:</strong> Available based on merit</li>
         </ul>
