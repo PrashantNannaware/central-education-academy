@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { GraduationCap, BookOpen, Users, MapPin } from "lucide-react";
-import CourseSelectionForm from "./CourseSelectionForm";
+import { Button } from "@/components/ui/button";
 
 const Hero = () => {
   return (
@@ -18,32 +18,36 @@ const Hero = () => {
       </div>
 
       <div className="relative z-10 container mx-auto px-4 pt-40 pb-32">
-        <motion.div
+        <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="max-w-4xl mx-auto text-center"
         >
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-            Shape Your Future with Excellence
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
+            Excel in Your Academic Journey
           </h1>
-          <p className="text-xl text-gray-200 max-w-2xl mx-auto">
-            Join our community of ambitious learners and unlock your potential through world-class education and guidance.
+          <p className="text-xl md:text-2xl text-neutral-200 mb-8">
+            Expert tutoring in Mathematics, Science, and English. Join our proven pathway to academic success.
           </p>
-        </motion.div>
-
-        {/* Course Selection Form */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="max-w-4xl mx-auto mb-16"
-        >
-          <CourseSelectionForm />
+          <div className="flex flex-wrap justify-center gap-4">
+            <Button 
+              className="bg-accent-purple hover:bg-accent-purple/90 text-white px-8 py-6 text-lg"
+              variant="default"
+            >
+              Start Learning Today
+            </Button>
+            <Button 
+              className="bg-white/10 hover:bg-white/20 text-white px-8 py-6 text-lg backdrop-blur-sm"
+              variant="default"
+            >
+              View Course Schedule
+            </Button>
+          </div>
         </motion.div>
 
         {/* Feature Blocks */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-32">
           <FeatureBlock
             icon={<GraduationCap className="w-12 h-12" />}
             title="Future Students"
@@ -74,29 +78,22 @@ const Hero = () => {
   );
 };
 
-const FeatureBlock = ({
-  icon,
-  title,
-  description,
-  bgColor,
-}: {
+const FeatureBlock = ({ icon, title, description, bgColor }: {
   icon: React.ReactNode;
   title: string;
   description: string;
   bgColor: string;
-}) => {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: 0.2 }}
-      className={`${bgColor} backdrop-blur-sm p-8 text-white hover:scale-105 transition-transform duration-300 rounded-xl border border-white/10`}
-    >
-      <div className="mb-4">{icon}</div>
-      <h3 className="text-xl font-semibold mb-3">{title}</h3>
-      <p className="text-gray-100">{description}</p>
-    </motion.div>
-  );
-};
+}) => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6, delay: 0.2 }}
+    className={`${bgColor} backdrop-blur-sm p-8 text-white hover:scale-105 transition-transform duration-300 rounded-xl border border-white/10`}
+  >
+    <div className="mb-4">{icon}</div>
+    <h3 className="text-xl font-semibold mb-3">{title}</h3>
+    <p className="text-neutral-200 text-sm">{description}</p>
+  </motion.div>
+);
 
 export default Hero;
