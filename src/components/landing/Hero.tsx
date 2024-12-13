@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { GraduationCap, BookOpen, Users, MapPin } from "lucide-react";
+import { Compass, BookOpen, GraduationCap, Trophy } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Hero = () => {
@@ -49,27 +49,27 @@ const Hero = () => {
         {/* Feature Blocks */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-32">
           <FeatureBlock
-            icon={<GraduationCap className="w-12 h-12" />}
-            title="Future Students"
-            description="Our unique personality rests on the bedrock values of academic excellence, inclusivity, and social responsibility."
+            icon={<Compass className="w-12 h-12" />}
+            title="Explore Your Academic Journey"
+            description="Discover a range of courses tailored to help you excel in competitive exams like NEET and JEE. Start your journey with us to achieve academic excellence."
             bgColor="bg-[#003D4C]/90"
           />
           <FeatureBlock
             icon={<BookOpen className="w-12 h-12" />}
-            title="Academic Programs"
-            description="Education fosters intellectual inquiry and reflection, personal growth, and a commitment to the world beyond oneself."
+            title="Our Course Offerings"
+            description="From Medical and Engineering entrance exams to foundational classes, explore our programs designed to shape the future of young achievers."
             bgColor="bg-[#9B9B27]/90"
           />
           <FeatureBlock
-            icon={<Users className="w-12 h-12" />}
-            title="Presidential Search"
-            description="Recruiting, selecting, and appointing the ninth College president."
+            icon={<GraduationCap className="w-12 h-12" />}
+            title="Meet Our Expert Faculty"
+            description="Learn from the best! Our experienced faculty members provide guidance, mentorship, and insights to help you excel in your chosen field."
             bgColor="bg-[#2A9FD6]/90"
           />
           <FeatureBlock
-            icon={<MapPin className="w-12 h-12" />}
-            title="Virtual Campus Tours"
-            description="Take a virtual tour, learn about admission and financial aid, and speak with current students."
+            icon={<Trophy className="w-12 h-12" />}
+            title="Student Success Stories"
+            description="Hear from our top achievers and learn how they secured admissions into prestigious medical and engineering colleges through our programs."
             bgColor="bg-[#8B1A1A]/90"
           />
         </div>
