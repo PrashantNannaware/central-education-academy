@@ -22,7 +22,7 @@ const CreateAccountForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6 pt-4">
+    <form onSubmit={handleSubmit} className="space-y-4">
       <div className="space-y-2">
         <Label htmlFor="name">Full Name</Label>
         <div className="relative">

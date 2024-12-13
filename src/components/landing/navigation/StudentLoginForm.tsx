@@ -5,12 +5,10 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/components/ui/use-toast";
 import { Lock, Mail } from "lucide-react";
 import {
-  Drawer,
-  DrawerContent,
-  DrawerHeader,
-  DrawerTitle,
-  DrawerTrigger,
-} from "@/components/ui/drawer";
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import ForgotPasswordForm from "./ForgotPasswordForm";
 import CreateAccountForm from "./CreateAccountForm";
 
@@ -64,8 +62,8 @@ const StudentLoginForm = () => {
       </div>
 
       <div className="flex items-center justify-between">
-        <Drawer>
-          <DrawerTrigger asChild>
+        <Popover>
+          <PopoverTrigger asChild>
             <Button
               type="button"
               variant="link"
@@ -73,19 +71,15 @@ const StudentLoginForm = () => {
             >
               Forgot password?
             </Button>
-          </DrawerTrigger>
-          <DrawerContent className="h-[95vh] p-6">
-            <DrawerHeader>
-              <DrawerTitle className="text-2xl font-bold">Reset Password</DrawerTitle>
-            </DrawerHeader>
-            <div className="overflow-y-auto max-h-[calc(95vh-100px)]">
-              <ForgotPasswordForm />
-            </div>
-          </DrawerContent>
-        </Drawer>
+          </PopoverTrigger>
+          <PopoverContent className="w-80 p-4">
+            <h3 className="text-lg font-semibold mb-4">Reset Password</h3>
+            <ForgotPasswordForm />
+          </PopoverContent>
+        </Popover>
 
-        <Drawer>
-          <DrawerTrigger asChild>
+        <Popover>
+          <PopoverTrigger asChild>
             <Button
               type="button"
               variant="link"
@@ -93,16 +87,12 @@ const StudentLoginForm = () => {
             >
               Create account
             </Button>
-          </DrawerTrigger>
-          <DrawerContent className="h-[95vh] p-6">
-            <DrawerHeader>
-              <DrawerTitle className="text-2xl font-bold">Create New Account</DrawerTitle>
-            </DrawerHeader>
-            <div className="overflow-y-auto max-h-[calc(95vh-100px)]">
-              <CreateAccountForm />
-            </div>
-          </DrawerContent>
-        </Drawer>
+          </PopoverTrigger>
+          <PopoverContent className="w-80 p-4">
+            <h3 className="text-lg font-semibold mb-4">Create New Account</h3>
+            <CreateAccountForm />
+          </PopoverContent>
+        </Popover>
       </div>
 
       <Button type="submit" className="w-full">

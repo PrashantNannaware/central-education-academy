@@ -20,7 +20,7 @@ const ForgotPasswordForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6 pt-4">
+    <form onSubmit={handleSubmit} className="space-y-4">
       <div className="space-y-2">
         <Label htmlFor="reset-email">Email</Label>
         <div className="relative">
