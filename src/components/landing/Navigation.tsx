@@ -15,18 +15,11 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import EnrollmentForm from "./navigation/EnrollmentForm";
+import StudentLoginForm from "./navigation/StudentLoginForm";
 import { useToast } from "@/components/ui/use-toast";
 
 const Navigation = () => {
   const { toast } = useToast();
-
-  const handleStudentLogin = () => {
-    toast({
-      title: "Coming Soon",
-      description: "Student login functionality will be available soon.",
-      duration: 3000,
-    });
-  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50">
@@ -85,15 +78,26 @@ const Navigation = () => {
               <Search className="w-5 h-5" />
             </Button>
 
-            {/* Student Login Button */}
-            <Button 
-              variant="outline"
-              onClick={handleStudentLogin}
-              className="flex items-center gap-2 text-primary hover:text-primary/90"
-            >
-              <LogIn className="w-4 h-4" />
-              Student Login
-            </Button>
+            {/* Student Login Button with Drawer */}
+            <Drawer>
+              <DrawerTrigger asChild>
+                <Button 
+                  variant="outline"
+                  className="flex items-center gap-2 text-primary hover:text-primary/90"
+                >
+                  <LogIn className="w-4 h-4" />
+                  Student Login
+                </Button>
+              </DrawerTrigger>
+              <DrawerContent className="h-[95vh] p-6">
+                <DrawerHeader>
+                  <DrawerTitle className="text-2xl font-bold">Student Login</DrawerTitle>
+                </DrawerHeader>
+                <div className="overflow-y-auto max-h-[calc(95vh-100px)]">
+                  <StudentLoginForm />
+                </div>
+              </DrawerContent>
+            </Drawer>
 
             {/* Enroll Now Button with Drawer */}
             <Drawer>
