@@ -1,8 +1,12 @@
 import { motion } from "framer-motion";
-import { Compass, BookOpen, GraduationCap, Trophy } from "lucide-react";
+import { Compass, BookOpen, GraduationCap, Trophy, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Tooltip } from "@/components/ui/tooltip";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="relative min-h-screen">
       {/* Background Image */}
@@ -12,7 +16,6 @@ const Hero = () => {
           backgroundImage: "url('https://images.unsplash.com/photo-1439337153520-7082a56a81f4')",
         }}
       >
-        {/* Enhanced gradient overlay for better text readability */}
         <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/70 to-primary/50 mix-blend-multiply" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30" />
       </div>
@@ -31,18 +34,31 @@ const Hero = () => {
             Expert tutoring in Mathematics, Science, and English. Join our proven pathway to academic success.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Button 
-              className="bg-accent-purple hover:bg-accent-purple/90 text-white px-8 py-6 text-lg"
-              variant="default"
-            >
-              Start Learning Today
-            </Button>
-            <Button 
-              className="bg-white/10 hover:bg-white/20 text-white px-8 py-6 text-lg backdrop-blur-sm"
-              variant="default"
-            >
-              View Course Schedule
-            </Button>
+            <Tooltip content="Limited seats available! Early enrollment discounts apply">
+              <Button 
+                onClick={() => navigate('/enroll')}
+                className="group relative bg-[#0FA0CE] hover:bg-[#0EA5E9] text-white px-8 py-6 text-lg rounded-lg transition-all duration-300 flex items-center gap-2"
+              >
+                <GraduationCap className="w-5 h-5" />
+                Enroll Now for Success
+                <span className="absolute -bottom-8 left-0 w-full text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white">
+                  Take the first step towards NEET/JEE success
+                </span>
+              </Button>
+            </Tooltip>
+            
+            <Tooltip content="Find the perfect batch that fits your schedule">
+              <Button 
+                onClick={() => navigate('/schedule')}
+                className="group relative bg-[#22C55E] hover:bg-[#16A34A] text-white px-8 py-6 text-lg rounded-lg transition-all duration-300 flex items-center gap-2 backdrop-blur-sm"
+              >
+                <Calendar className="w-5 h-5" />
+                Explore Batch Timings
+                <span className="absolute -bottom-8 left-0 w-full text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white">
+                  Book your slot today
+                </span>
+              </Button>
+            </Tooltip>
           </div>
         </motion.div>
 
