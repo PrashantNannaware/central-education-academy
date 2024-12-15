@@ -35,7 +35,7 @@ const Hero = () => {
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
             Excel in Your Academic Journey
           </h1>
-          <p className="text-xl md:text-2xl text-neutral-200 mb-8">
+          <p className="text-xl md:text-2xl text-white mb-8">
             Expert tutoring in Mathematics, Science, and English. Join our proven pathway to academic success.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
@@ -48,13 +48,13 @@ const Hero = () => {
                   >
                     <GraduationCap className="w-5 h-5" />
                     Enroll Now for Success
-                    <span className="absolute -bottom-8 left-0 w-full text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white">
+                    <span className="absolute -bottom-8 left-0 w-full text-sm text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       Take the first step towards NEET/JEE success
                     </span>
                   </Button>
                 </TooltipTrigger>
                 <TooltipContent>
-                  <p>Limited seats available! Early enrollment discounts apply</p>
+                  <p className="text-neutral-800">Limited seats available! Early enrollment discounts apply</p>
                 </TooltipContent>
               </Tooltip>
             </TooltipProvider>
@@ -68,13 +68,13 @@ const Hero = () => {
                   >
                     <Calendar className="w-5 h-5" />
                     Explore Batch Timings
-                    <span className="absolute -bottom-8 left-0 w-full text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white">
+                    <span className="absolute -bottom-8 left-0 w-full text-sm text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       Book your slot today
                     </span>
                   </Button>
                 </TooltipTrigger>
                 <TooltipContent>
-                  <p>Find the perfect batch that fits your schedule</p>
+                  <p className="text-neutral-800">Find the perfect batch that fits your schedule</p>
                 </TooltipContent>
               </Tooltip>
             </TooltipProvider>
@@ -84,25 +84,25 @@ const Hero = () => {
         {/* Feature Blocks */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-32">
           <FeatureBlock
-            icon={<Compass className="w-12 h-12" />}
+            icon={<Compass className="w-12 h-12 text-white" />}
             title="Explore Your Academic Journey"
             description="Discover a range of courses tailored to help you excel in competitive exams like NEET and JEE. Start your journey with us to achieve academic excellence."
             bgColor="bg-[#003D4C]/90"
           />
           <FeatureBlock
-            icon={<BookOpen className="w-12 h-12" />}
+            icon={<BookOpen className="w-12 h-12 text-white" />}
             title="Our Course Offerings"
             description="From Medical and Engineering entrance exams to foundational classes, explore our programs designed to shape the future of young achievers."
             bgColor="bg-[#9B9B27]/90"
           />
           <FeatureBlock
-            icon={<GraduationCap className="w-12 h-12" />}
+            icon={<GraduationCap className="w-12 h-12 text-white" />}
             title="Meet Our Expert Faculty"
             description="Learn from the best! Our experienced faculty members provide guidance, mentorship, and insights to help you excel in your chosen field."
             bgColor="bg-[#2A9FD6]/90"
           />
           <FeatureBlock
-            icon={<Trophy className="w-12 h-12" />}
+            icon={<Trophy className="w-12 h-12 text-white" />}
             title="Student Success Stories"
             description="Hear from our top achievers and learn how they secured admissions into prestigious medical and engineering colleges through our programs."
             bgColor="bg-[#8B1A1A]/90"
@@ -126,8 +126,8 @@ const FeatureBlock = ({ icon, title, description, bgColor }: {
     className={`${bgColor} backdrop-blur-sm p-8 text-white hover:scale-105 transition-transform duration-300 rounded-xl border border-white/10`}
   >
     <div className="mb-4">{icon}</div>
-    <h3 className="text-xl font-semibold mb-3">{title}</h3>
-    <p className="text-neutral-200 text-sm">{description}</p>
+    <h3 className="text-xl font-semibold mb-3 text-white">{title}</h3>
+    <p className="text-white text-sm">{description}</p>
   </motion.div>
 );
 
