@@ -35,7 +35,7 @@ const Hero = () => {
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
             Excel in Your Academic Journey
           </h1>
-          <p className="text-xl md:text-2xl text-white font-medium mb-8">
+          <p className="text-xl md:text-2xl text-white font-medium mb-8 tracking-wide">
             Expert tutoring in Mathematics, Science, and English. Join our proven pathway to academic success.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
@@ -44,11 +44,11 @@ const Hero = () => {
                 <TooltipTrigger asChild>
                   <Button 
                     onClick={() => navigate('/enroll')}
-                    className="group relative bg-[#0FA0CE] hover:bg-[#0EA5E9] text-white px-8 py-6 text-lg rounded-lg transition-all duration-300 flex items-center gap-2 font-semibold"
+                    className="group relative bg-[#0FA0CE] hover:bg-[#0EA5E9] text-white px-8 py-6 text-lg rounded-lg transition-all duration-300 flex items-center gap-2 font-semibold shadow-lg"
                   >
                     <GraduationCap className="w-5 h-5 text-white" />
-                    Enroll Now for Success
-                    <span className="absolute -bottom-8 left-0 w-full text-sm text-white font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span className="text-white">Enroll Now for Success</span>
+                    <span className="absolute -bottom-8 left-0 w-full text-sm text-white font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-md">
                       Take the first step towards NEET/JEE success
                     </span>
                   </Button>
@@ -64,11 +64,11 @@ const Hero = () => {
                 <TooltipTrigger asChild>
                   <Button 
                     onClick={() => navigate('/schedule')}
-                    className="group relative bg-[#22C55E] hover:bg-[#16A34A] text-white px-8 py-6 text-lg rounded-lg transition-all duration-300 flex items-center gap-2 font-semibold backdrop-blur-sm"
+                    className="group relative bg-[#22C55E] hover:bg-[#16A34A] text-white px-8 py-6 text-lg rounded-lg transition-all duration-300 flex items-center gap-2 font-semibold backdrop-blur-sm shadow-lg"
                   >
                     <Calendar className="w-5 h-5 text-white" />
-                    Explore Batch Timings
-                    <span className="absolute -bottom-8 left-0 w-full text-sm text-white font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span className="text-white">Explore Batch Timings</span>
+                    <span className="absolute -bottom-8 left-0 w-full text-sm text-white font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-md">
                       Book your slot today
                     </span>
                   </Button>
@@ -123,7 +123,7 @@ const FeatureBlock = ({ icon, title, description, bgColor }: {
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.6, delay: 0.2 }}
-    className={`${bgColor} backdrop-blur-sm p-8 hover:scale-105 transition-transform duration-300 rounded-xl border border-white/10`}
+    className={`${bgColor} backdrop-blur-sm p-8 hover:scale-105 transition-transform duration-300 rounded-xl border border-white/10 shadow-xl`}
   >
     <div className="mb-4">{icon}</div>
     <h3 className="text-xl font-bold mb-3 text-white tracking-wide">{title}</h3>
