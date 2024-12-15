@@ -1,7 +1,12 @@
 import { motion } from "framer-motion";
 import { Compass, BookOpen, GraduationCap, Trophy, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Tooltip } from "@/components/ui/tooltip";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
@@ -34,30 +39,40 @@ const Hero = () => {
             Expert tutoring in Mathematics, Science, and English. Join our proven pathway to academic success.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Tooltip content="Limited seats available! Early enrollment discounts apply">
-              <Button 
-                onClick={() => navigate('/enroll')}
-                className="group relative bg-[#0FA0CE] hover:bg-[#0EA5E9] text-white px-8 py-6 text-lg rounded-lg transition-all duration-300 flex items-center gap-2"
-              >
-                <GraduationCap className="w-5 h-5" />
-                Enroll Now for Success
-                <span className="absolute -bottom-8 left-0 w-full text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white">
-                  Take the first step towards NEET/JEE success
-                </span>
-              </Button>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button 
+                  onClick={() => navigate('/enroll')}
+                  className="group relative bg-[#0FA0CE] hover:bg-[#0EA5E9] text-white px-8 py-6 text-lg rounded-lg transition-all duration-300 flex items-center gap-2"
+                >
+                  <GraduationCap className="w-5 h-5" />
+                  Enroll Now for Success
+                  <span className="absolute -bottom-8 left-0 w-full text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white">
+                    Take the first step towards NEET/JEE success
+                  </span>
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Limited seats available! Early enrollment discounts apply</p>
+              </TooltipContent>
             </Tooltip>
             
-            <Tooltip content="Find the perfect batch that fits your schedule">
-              <Button 
-                onClick={() => navigate('/schedule')}
-                className="group relative bg-[#22C55E] hover:bg-[#16A34A] text-white px-8 py-6 text-lg rounded-lg transition-all duration-300 flex items-center gap-2 backdrop-blur-sm"
-              >
-                <Calendar className="w-5 h-5" />
-                Explore Batch Timings
-                <span className="absolute -bottom-8 left-0 w-full text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white">
-                  Book your slot today
-                </span>
-              </Button>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button 
+                  onClick={() => navigate('/schedule')}
+                  className="group relative bg-[#22C55E] hover:bg-[#16A34A] text-white px-8 py-6 text-lg rounded-lg transition-all duration-300 flex items-center gap-2 backdrop-blur-sm"
+                >
+                  <Calendar className="w-5 h-5" />
+                  Explore Batch Timings
+                  <span className="absolute -bottom-8 left-0 w-full text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white">
+                    Book your slot today
+                  </span>
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Find the perfect batch that fits your schedule</p>
+              </TooltipContent>
             </Tooltip>
           </div>
         </motion.div>
