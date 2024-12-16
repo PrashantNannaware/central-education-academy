@@ -62,29 +62,33 @@ const Navigation = () => {
           </DropdownMenu>
 
           {/* Brand and Logo */}
-          <div className="flex items-center gap-3">
-            <div className="relative w-12 h-12">
-              {/* Border */}
-              <div className="absolute inset-0 border-2 border-[#003D4C] rounded-lg"></div>
-              
-              {/* CEA Text */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-xl font-bold text-[#003D4C]">CEA</span>
-              </div>
+          <div className="flex items-center gap-4">
+            <div className="relative w-14 h-14 flex items-center justify-center">
+              {/* Main Circle */}
+              <div className="absolute inset-0 bg-white rounded-full border-2 border-[#003D4C] shadow-lg"></div>
               
               {/* Orange Arc */}
               <div className="absolute inset-0">
-                <div className="w-full h-full border-t-4 border-r-4 border-[#F97316] rounded-tr-lg transform rotate-45"></div>
+                <div className="w-full h-full border-t-4 border-r-4 border-[#F97316] rounded-full transform rotate-45 scale-90"></div>
               </div>
               
               {/* Green Arc */}
               <div className="absolute inset-0">
-                <div className="w-full h-full border-b-4 border-l-4 border-[#22C55E] rounded-bl-lg transform -rotate-45"></div>
+                <div className="w-full h-full border-b-4 border-l-4 border-[#22C55E] rounded-full transform -rotate-45 scale-90"></div>
               </div>
+              
+              {/* CEA Text */}
+              <span className="relative text-2xl font-bold text-[#003D4C] tracking-tight z-10">CEA</span>
             </div>
-            <div className="flex flex-col">
-              <span className="text-2xl font-bold text-primary tracking-tight">CEA</span>
-              <span className="text-xs text-neutral-600">Central Educational Academy</span>
+            
+            {/* Tagline */}
+            <div className="flex flex-col items-start">
+              <span className="text-lg font-semibold text-[#003D4C] tracking-tight leading-tight">
+                Central Educational Academy
+              </span>
+              <span className="text-sm text-neutral-600 font-medium">
+                Your Career is Our Aim
+              </span>
             </div>
           </div>
 
