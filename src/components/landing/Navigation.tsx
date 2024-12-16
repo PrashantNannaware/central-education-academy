@@ -1,4 +1,4 @@
-import { GraduationCap, Search, LogIn, Menu, BookOpen, Users, BookMarked, School, ArrowUpCircle } from "lucide-react";
+import { GraduationCap, Search, LogIn, Menu, BookOpen, Users, BookMarked, School } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Drawer,
@@ -63,10 +63,23 @@ const Navigation = () => {
 
           {/* Brand and Logo */}
           <div className="flex items-center gap-3">
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-[#1EAEDB] via-[#F97316] to-[#22C55E] rounded-full animate-spin-slow opacity-75"></div>
-              <div className="relative bg-white rounded-full p-2">
-                <ArrowUpCircle className="w-8 h-8 text-[#1EAEDB]" />
+            <div className="relative w-12 h-12">
+              {/* Border */}
+              <div className="absolute inset-0 border-2 border-[#003D4C] rounded-lg"></div>
+              
+              {/* CEA Text */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <span className="text-xl font-bold text-[#003D4C]">CEA</span>
+              </div>
+              
+              {/* Orange Arc */}
+              <div className="absolute inset-0">
+                <div className="w-full h-full border-t-4 border-r-4 border-[#F97316] rounded-tr-lg transform rotate-45"></div>
+              </div>
+              
+              {/* Green Arc */}
+              <div className="absolute inset-0">
+                <div className="w-full h-full border-b-4 border-l-4 border-[#22C55E] rounded-bl-lg transform -rotate-45"></div>
               </div>
             </div>
             <div className="flex flex-col">
