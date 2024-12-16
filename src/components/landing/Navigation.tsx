@@ -1,4 +1,4 @@
-import { GraduationCap, Search, LogIn, Menu, BookOpen, Users, BookMarked, School } from "lucide-react";
+import { GraduationCap, Search, LogIn, Menu, BookOpen, Users, BookMarked, School, ArrowUpCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Drawer,
@@ -63,8 +63,16 @@ const Navigation = () => {
 
           {/* Brand and Logo */}
           <div className="flex items-center gap-3">
-            <GraduationCap className="w-8 h-8 text-primary" />
-            <span className="text-2xl font-bold text-primary tracking-tight">EduExcel</span>
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-[#1EAEDB] via-[#F97316] to-[#22C55E] rounded-full animate-spin-slow opacity-75"></div>
+              <div className="relative bg-white rounded-full p-2">
+                <ArrowUpCircle className="w-8 h-8 text-[#1EAEDB]" />
+              </div>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-2xl font-bold text-primary tracking-tight">CEA</span>
+              <span className="text-xs text-neutral-600">Central Educational Academy</span>
+            </div>
           </div>
 
           {/* Main Navigation Items */}

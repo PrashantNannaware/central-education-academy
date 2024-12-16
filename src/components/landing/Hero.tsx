@@ -32,12 +32,16 @@ const Hero = () => {
           transition={{ duration: 0.6 }}
           className="max-w-4xl mx-auto text-center"
         >
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-            Excel in Your Academic Journey
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-4">
+            Central Educational Academy
           </h1>
-          <p className="text-xl md:text-2xl text-white font-medium mb-8 tracking-wide">
-            Expert tutoring in Mathematics, Science, and English. Join our proven pathway to academic success.
+          <p className="text-2xl text-white font-medium mb-4">
+            Your Career is Our Aim
           </p>
+          <p className="text-xl text-white/90 font-medium mb-8 tracking-wide">
+            Empowering Success in NEET, JEE & MHT-CET
+          </p>
+          
           <div className="flex flex-wrap justify-center gap-4">
             <TooltipProvider>
               <Tooltip>
