@@ -1,4 +1,4 @@
-import { GraduationCap, Search, LogIn, Menu, BookOpen, Users, BookMarked, School } from "lucide-react";
+import { GraduationCap, Search, LogIn, Menu, BookOpen, Users, BookMarked, School, ChevronDown, HelpCircle, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Drawer,
@@ -26,62 +26,109 @@ const Navigation = () => {
       <div className="container mx-auto px-4 mt-4">
         <div className="flex items-center justify-between h-20 bg-white/80 backdrop-blur-sm rounded-full shadow-lg px-8">
           {/* Menu Button with Dropdown */}
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button 
-                variant="ghost"
-                className="bg-white/50 hover:bg-white/80 text-primary hover:text-primary/90 
-                         flex items-center gap-2 px-6 py-2 rounded-full 
-                         shadow-sm hover:shadow-md transition-all duration-300
-                         border border-neutral-200/50 hover:border-neutral-300/50
-                         transform hover:scale-105"
-              >
-                <Menu className="w-5 h-5" />
-                <span className="text-sm font-medium">Menu</span>
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-56 mt-2 p-2 bg-white/95 backdrop-blur-sm border border-neutral-200/50 rounded-xl shadow-xl">
-              <DropdownMenuItem className="flex items-center gap-2 px-4 py-2.5 rounded-lg hover:bg-neutral-100/80 transition-colors">
-                <BookOpen className="w-4 h-4 text-primary" />
-                <span>Courses</span>
-              </DropdownMenuItem>
-              <DropdownMenuItem className="flex items-center gap-2 px-4 py-2.5 rounded-lg hover:bg-neutral-100/80 transition-colors">
-                <Users className="w-4 h-4 text-primary" />
-                <span>Community</span>
-              </DropdownMenuItem>
-              <DropdownMenuSeparator className="my-2 border-neutral-200/70" />
-              <DropdownMenuItem className="flex items-center gap-2 px-4 py-2.5 rounded-lg hover:bg-neutral-100/80 transition-colors">
-                <BookMarked className="w-4 h-4 text-primary" />
-                <span>Resources</span>
-              </DropdownMenuItem>
-              <DropdownMenuItem className="flex items-center gap-2 px-4 py-2.5 rounded-lg hover:bg-neutral-100/80 transition-colors">
-                <School className="w-4 h-4 text-primary" />
-                <span>Campus</span>
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+          <div className="flex items-center gap-4">
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button 
+                  variant="ghost"
+                  className="bg-white/50 hover:bg-white/80 text-primary hover:text-primary/90 
+                           flex items-center gap-2 px-6 py-2 rounded-full 
+                           shadow-sm hover:shadow-md transition-all duration-300
+                           border border-neutral-200/50 hover:border-neutral-300/50"
+                >
+                  <Menu className="w-5 h-5" />
+                  <span className="text-sm font-medium">Menu</span>
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-56 mt-2 p-2 bg-white/95 backdrop-blur-sm border border-neutral-200/50 rounded-xl shadow-xl">
+                <DropdownMenuItem className="flex items-center gap-2 px-4 py-2.5 rounded-lg hover:bg-neutral-100/80 transition-colors">
+                  <BookOpen className="w-4 h-4 text-primary" />
+                  <span>Courses</span>
+                </DropdownMenuItem>
+                <DropdownMenuItem className="flex items-center gap-2 px-4 py-2.5 rounded-lg hover:bg-neutral-100/80 transition-colors">
+                  <Users className="w-4 h-4 text-primary" />
+                  <span>Community</span>
+                </DropdownMenuItem>
+                <DropdownMenuSeparator className="my-2 border-neutral-200/70" />
+                <DropdownMenuItem className="flex items-center gap-2 px-4 py-2.5 rounded-lg hover:bg-neutral-100/80 transition-colors">
+                  <BookMarked className="w-4 h-4 text-primary" />
+                  <span>Resources</span>
+                </DropdownMenuItem>
+                <DropdownMenuItem className="flex items-center gap-2 px-4 py-2.5 rounded-lg hover:bg-neutral-100/80 transition-colors">
+                  <School className="w-4 h-4 text-primary" />
+                  <span>Campus</span>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            {/* Courses Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button 
+                  variant="ghost"
+                  className="bg-white/50 hover:bg-white/80 text-primary hover:text-primary/90 flex items-center gap-1"
+                >
+                  Courses <ChevronDown className="w-4 h-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-56 mt-2 p-2 bg-white/95 backdrop-blur-sm border border-neutral-200/50 rounded-xl shadow-xl">
+                <DropdownMenuItem>NEET Preparation</DropdownMenuItem>
+                <DropdownMenuItem>JEE Main & Advanced</DropdownMenuItem>
+                <DropdownMenuItem>Foundation Courses</DropdownMenuItem>
+                <DropdownMenuItem>Online Learning</DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            {/* Admissions Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button 
+                  variant="ghost"
+                  className="bg-white/50 hover:bg-white/80 text-primary hover:text-primary/90 flex items-center gap-1"
+                >
+                  Admissions <ChevronDown className="w-4 h-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-56 mt-2 p-2 bg-white/95 backdrop-blur-sm border border-neutral-200/50 rounded-xl shadow-xl">
+                <DropdownMenuItem>How to Apply</DropdownMenuItem>
+                <DropdownMenuItem>Admission Process</DropdownMenuItem>
+                <DropdownMenuItem>Required Documents</DropdownMenuItem>
+                <DropdownMenuItem>Fee Structure</DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            {/* FAQs Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button 
+                  variant="ghost"
+                  className="bg-white/50 hover:bg-white/80 text-primary hover:text-primary/90 flex items-center gap-1"
+                >
+                  FAQs <ChevronDown className="w-4 h-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-56 mt-2 p-2 bg-white/95 backdrop-blur-sm border border-neutral-200/50 rounded-xl shadow-xl">
+                <DropdownMenuItem>General Questions</DropdownMenuItem>
+                <DropdownMenuItem>Course Related</DropdownMenuItem>
+                <DropdownMenuItem>Admission Related</DropdownMenuItem>
+                <DropdownMenuItem>Online Classes</DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
 
           {/* Brand and Logo */}
           <div className="flex items-center gap-4">
             <div className="relative w-14 h-14 flex items-center justify-center">
-              {/* Main Circle */}
               <div className="absolute inset-0 bg-white rounded-full border-2 border-[#003D4C] shadow-lg"></div>
-              
-              {/* Orange Arc */}
               <div className="absolute inset-0">
                 <div className="w-full h-full border-t-4 border-r-4 border-[#F97316] rounded-full transform rotate-45 scale-90"></div>
               </div>
-              
-              {/* Green Arc */}
               <div className="absolute inset-0">
                 <div className="w-full h-full border-b-4 border-l-4 border-[#22C55E] rounded-full transform -rotate-45 scale-90"></div>
               </div>
-              
-              {/* CEA Text */}
               <span className="relative text-2xl font-bold text-[#003D4C] tracking-tight z-10">CEA</span>
             </div>
             
-            {/* Tagline */}
             <div className="flex flex-col items-start">
               <span className="text-lg font-semibold text-[#003D4C] tracking-tight leading-tight">
                 Central Educational Academy
@@ -94,7 +141,6 @@ const Navigation = () => {
 
           {/* Main Navigation Items */}
           <div className="flex items-center gap-6">
-            {/* Search Button */}
             <Button 
               variant="ghost" 
               size="icon"
@@ -103,7 +149,6 @@ const Navigation = () => {
               <Search className="w-5 h-5" />
             </Button>
 
-            {/* Student Login Button with Drawer */}
             <Drawer>
               <DrawerTrigger asChild>
                 <Button 
@@ -124,7 +169,6 @@ const Navigation = () => {
               </DrawerContent>
             </Drawer>
 
-            {/* Enroll Now Button with Drawer */}
             <Drawer>
               <DrawerTrigger asChild>
                 <Button 
